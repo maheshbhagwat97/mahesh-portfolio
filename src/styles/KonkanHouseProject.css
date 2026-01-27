@@ -382,211 +382,22 @@
 
 @media (max-width: 900px) {
   .konkan-hero {
-    height: 380px;
+    height: 440px;
   }
 
   .konkan-hero-overlay {
-    padding: 1.75rem;
+    padding: 1.85rem;
   }
 
   .konkan-hero-content h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .konkan-hero {
-    height: 320px;
-    border-radius: 12px;
+    height: 360px;
   }
-
-  .konkan-hero-overlay {
-    padding: 1.5rem 1.25rem;
-  }
-
-  .konkan-hero-content .eyebrow {
-    font-size: 0.7rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .konkan-hero-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .konkan-tagline {
-    font-size: 0.95rem;
-  }
-
-  .konkan-hero-meta {
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-  }
-
-  .konkan-hero-meta span {
-    font-size: 0.8rem;
-  }
-
-  .konkan-section-header {
-    margin-bottom: 1.75rem;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .konkan-section-header h2 {
-    font-size: 1.4rem;
-  }
-
-  .konkan-section-icon {
-    font-size: 2rem;
-  }
-
-  .konkan-grid.two {
-    grid-template-columns: 1fr;
-  }
-
-  .konkan-grid.three {
-    grid-template-columns: 1fr;
-  }
-
-  .konkan-grid.six {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  .konkan-card {
-    border-radius: 12px;
-  }
-
-  .konkan-card img {
-    height: 150px;
-  }
-
-  .konkan-zoning-card {
-    border-radius: 12px;
-  }
-
-  .zoning-image-wrap {
-    height: 180px;
-  }
-
-  .konkan-zoning-card h4 {
-    font-size: 1rem;
-  }
-
-  .konkan-zoning-card p {
-    font-size: 0.85rem;
-  }
-
-  .konkan-tech-card {
-    border-radius: 12px;
-  }
-
-  .tech-image-wrap {
-    height: 160px;
-  }
-
-  .tech-label {
-    font-size: 0.85rem;
-    padding: 0.75rem;
-  }
-
-  .konkan-subsection-header {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .subsection-icon {
-    font-size: 1.8rem;
-  }
-
-  .konkan-subsection-header h3 {
-    font-size: 1.1rem;
-  }
-
-  .konkan-subsection-header p {
-    font-size: 0.85rem;
-  }
-
-  .konkan-render-card {
-    border-radius: 12px;
-  }
-
-  .render-image-wrap {
-    height: 160px;
-  }
-
-  .render-title {
-    font-size: 0.85rem;
-    padding: 0.75rem;
-  }
-
-  .konkan-progress-card {
-    border-radius: 12px;
-  }
-
-  .progress-image-wrap {
-    height: 140px;
-  }
-
-  .progress-badge {
-    font-size: 1.2rem;
-  }
-
-  .konkan-status-card {
-    padding: 1.5rem;
-  }
-
-  .status-icon {
-    font-size: 2.5rem;
-  }
-
-  .konkan-status-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .konkan-nav {
-    padding: 1.5rem !important;
-  }
-
-  .konkan-nav-actions {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .konkan-nav-button {
-    width: 100%;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
-  }
-
-  .konkan-lightbox {
-    padding: 0.75rem;
-  }
-
-  .konkan-lightbox-inner {
-    max-width: 95vw;
-    max-height: 65vh;
-  }
-
-  .konkan-lightbox-image {
-    max-height: 65vh;
-    border-radius: 12px;
-  }
-
-  .konkan-lightbox-close {
-    top: 15px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 2rem;
-  }
-
-  .konkan-lightbox-caption {
-    font-size: 0.85rem;
-    margin-top: 0.75rem;
-  }
-}
 
 /* Section Header with Icon */
 .konkan-section-header {

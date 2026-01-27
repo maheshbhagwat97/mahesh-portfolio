@@ -795,58 +795,21 @@
 /* Responsive */
 @media (max-width: 768px) {
   .jaipur-hero {
-    height: 320px;
-    border-radius: 12px;
+    height: 400px;
   }
 
   .jaipur-hero-overlay {
-    padding: 1.5rem 1.25rem;
-  }
-
-  .jaipur-hero-content .eyebrow {
-    font-size: 0.7rem;
-    padding: 0.4rem 0.8rem;
+    padding: 2rem 1.5rem;
   }
 
   .jaipur-hero-content h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 0.75rem;
-  }
-
-  .jaipur-tagline {
-    font-size: 0.95rem;
   }
 
   .jaipur-hero-meta {
     flex-direction: column;
     gap: 0.4rem;
-    font-size: 0.8rem;
-  }
-
-  .jaipur-hero-meta span {
-    font-size: 0.8rem;
-  }
-
-  .jaipur-section {
-    padding: 1.2rem !important;
-  }
-
-  .jaipur-section-header {
-    margin-bottom: 1.5rem;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .jaipur-section-header h2 {
-    font-size: 1.4rem;
-  }
-
-  .jaipur-section-icon {
-    font-size: 1.8rem;
-  }
-
-  .jaipur-section-title-wrap {
-    gap: 0.5rem;
   }
 
   .jaipur-context-grid,
@@ -855,25 +818,8 @@
     gap: 1.5rem;
   }
 
-  .jaipur-context-card,
-  .jaipur-creative-card {
-    padding: 1.5rem;
-    padding-top: 2.25rem;
-  }
-
-  .jaipur-context-icon {
-    font-size: 2.2rem;
-  }
-
-  .jaipur-context-card h3,
-  .jaipur-creative-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .jaipur-grid.two,
-  .jaipur-grid.three {
+  .jaipur-grid.two {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
   }
 
   .jaipur-fact-grid {
@@ -881,101 +827,21 @@
     gap: 1rem;
   }
 
-  .jaipur-plan-card {
-    border-radius: 12px;
-  }
-
-  .plan-image-wrap {
-    height: 200px;
-  }
-
-  .jaipur-plan-card h4 {
-    font-size: 1rem;
-    padding: 0.75rem;
-  }
-
-  .jaipur-subsection-header {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .subsection-icon {
-    font-size: 1.8rem;
-  }
-
-  .jaipur-subsection-header h3 {
-    font-size: 1.1rem;
-  }
-
-  .jaipur-subsection-header p {
-    font-size: 0.85rem;
-  }
-
-  .jaipur-render-card {
-    border-radius: 12px;
-  }
-
-  .render-image-wrap {
-    height: 160px;
-  }
-
-  .render-title {
-    font-size: 0.85rem;
-    padding: 0.75rem;
-  }
-
-  .jaipur-status-card {
-    padding: 1.5rem;
-  }
-
-  .status-icon {
-    font-size: 2.5rem;
-  }
-
-  .jaipur-status-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .jaipur-nav {
-    padding: 1.5rem !important;
-  }
-
-  .jaipur-nav-actions {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .jaipur-nav-button {
-    width: 100%;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
-  }
-
-  .jaipur-lightbox {
-    padding: 0.75rem;
-  }
-
-  .jaipur-lightbox-inner {
-    max-width: 95vw;
-    max-height: 65vh;
-  }
-
-  .jaipur-lightbox-image {
-    max-height: 65vh;
-    border-radius: 12px;
-  }
-
   .jaipur-lightbox-close {
-    top: 15px;
-    right: 15px;
+    top: 12px;
+    right: 12px;
     width: 40px;
     height: 40px;
     font-size: 2rem;
   }
 
+  .jaipur-lightbox-inner img {
+    max-width: 95vw;
+    max-height: 65vh;
+  }
+
   .jaipur-lightbox-caption {
-    font-size: 0.85rem;
-    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
   }
 }
