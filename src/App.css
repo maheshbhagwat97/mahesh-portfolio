@@ -87,14 +87,35 @@
 .brand-info {
   display: flex;
   flex-direction: column;
-  gap: 0.05rem;
+  gap: 0.5rem;
+  justify-content: center;
 }
 
-.brand-info .eyebrow {
+.brand-name {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--text);
+  letter-spacing: 0.03em;
+}
+
+.brand-accent {
+  width: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 1px;
+  animation: slideInRight 0.7s ease 0.3s both;
+}
+
+@keyframes slideInRight {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 28px;
+    opacity: 1;
+  }
 }
 
 .role {

@@ -29,8 +29,8 @@ function Layout() {
             />
           </div>
           <div className="brand-info">
-            <p className="eyebrow">Mahesh Bhagwat</p>
-            <p className="role">Senior Interior Designer</p>
+            <p className="brand-name">Mahesh Bhagwat</p>
+            <div className="brand-accent"></div>
           </div>
         </div>
         <nav className="nav-links" aria-label="Primary">
