@@ -1,5 +1,6 @@
 .konkan-page {
   gap: 2rem;
+}
 
 .konkan-hero {
   position: relative;
@@ -10,6 +11,7 @@
   border: 1px solid var(--line);
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.12);
   background: linear-gradient(135deg, #fdfaf5 0%, rgba(196, 127, 78, 0.06) 100%);
+}
 
 .konkan-hero-image {
   width: 100%;
@@ -17,6 +19,7 @@
   object-fit: cover;
   display: block;
   filter: brightness(0.9);
+}
 
 .konkan-hero-overlay {
   position: absolute;
@@ -25,22 +28,26 @@
   align-items: flex-end;
   padding: 3.25rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
 
 .konkan-hero-content {
   color: #fffef9;
   max-width: 820px;
   animation: fadeInUp 0.8s ease forwards;
+}
 
 .konkan-hero-content h1 {
   color: #fffef9;
   margin: 0 0 0.6rem 0;
   font-size: clamp(2.2rem, 4vw, 3.3rem);
+}
 
 .konkan-tagline {
   margin: 0 0 1.1rem 0;
   font-size: 1.1rem;
   color: #f4ede2;
   max-width: 640px;
+}
 
 .konkan-hero-meta {
   display: flex;
@@ -48,6 +55,7 @@
   gap: 0.75rem 1.25rem;
   font-size: 0.95rem;
   color: #eae2d8;
+}
 
 .konkan-hero-meta span {
   display: inline-flex;
@@ -57,6 +65,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
 .konkan-section {
   overflow: hidden;
@@ -65,27 +74,34 @@
   border: 1px solid var(--line);
   background: linear-gradient(135deg, rgba(255, 253, 249, 0.98) 0%, rgba(246, 241, 233, 0.94) 100%);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.05);
+}
 
 .konkan-grid {
   display: grid;
   gap: 2rem;
+}
 
 .konkan-grid.two {
   grid-template-columns: repeat(2, 1fr);
+}
 
 .konkan-grid.three {
   grid-template-columns: repeat(3, 1fr);
+}
 
 .konkan-grid.six {
   grid-template-columns: repeat(3, 1fr);
+}
 
 .konkan-section-header {
   margin-bottom: 1.75rem;
   padding-bottom: 0.6rem;
   border-bottom: 2px solid rgba(196, 127, 78, 0.2);
+}
 
 .konkan-section-header h2 {
   margin: 0 0 0.35rem 0;
+}
 
 .konkan-fact-grid {
   display: grid;
@@ -95,15 +111,18 @@
   border-radius: 14px;
   background: linear-gradient(135deg, rgba(196, 127, 78, 0.08), rgba(196, 127, 78, 0.02));
   border: 1px solid rgba(196, 127, 78, 0.15);
+}
 
 .konkan-copy {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   line-height: 1.8;
+}
 
 .konkan-copy h2 {
   margin-top: 0;
+}
 
 .konkan-card,
 .konkan-plan,
@@ -118,6 +137,7 @@
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
 
 .konkan-card:hover,
 .konkan-plan:hover,
@@ -127,6 +147,7 @@
   transform: translateY(-6px);
   border-color: rgba(196, 127, 78, 0.4);
   box-shadow: 0 18px 42px rgba(196, 127, 78, 0.16);
+}
 
 .konkan-card img,
 .konkan-plan img,
@@ -138,6 +159,7 @@
   max-height: 340px;
   object-fit: cover;
   display: block;
+}
 
 .konkan-card img,
 .konkan-plan img,
@@ -145,41 +167,51 @@
 .konkan-tech img,
 .konkan-progress img {
   aspect-ratio: 4 / 3;
+}
 
 .konkan-plan img,
 .konkan-tech img,
 .konkan-render img,
 .konkan-progress img {
   max-height: 320px;
+}
 
 .konkan-plan-caption {
   padding: 1rem 1.1rem 1.25rem;
+}
 
 .konkan-plan-caption h4 {
   margin: 0 0 0.35rem 0;
+}
 
 .konkan-tech {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding-bottom: 0.5rem;
+}
 
 .konkan-tech img {
   max-height: 260px;
+}
 
 .konkan-render {
   padding-bottom: 0.75rem;
+}
 
 .konkan-render img {
   max-height: 280px;
+}
 
 .konkan-subhead {
   margin: 0 0 0.75rem 0;
+}
 
 .konkan-context-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
+}
 
 .konkan-context-card {
   padding: 2.25rem;
@@ -192,6 +224,7 @@
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
+}
 
 .konkan-context-card:nth-child(1) { animation-delay: 0s; }
 .konkan-context-card:nth-child(2) { animation-delay: 0.15s; }
@@ -206,33 +239,40 @@
   background: linear-gradient(90deg, var(--accent), var(--accent-alt));
   opacity: 0;
   transition: opacity 0.4s ease;
+}
 
 .konkan-context-card:hover::before {
   opacity: 1;
+}
 
 .konkan-context-card:hover {
   border-color: rgba(196, 127, 78, 0.3);
   transform: translateY(-10px) scale(1.01);
   box-shadow: 0 24px 56px rgba(196, 127, 78, 0.16);
   background: linear-gradient(135deg, rgba(255, 253, 249, 0.98) 0%, rgba(250, 248, 243, 0.98) 100%);
+}
 
 .konkan-context-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
   display: block;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 
 .konkan-context-card:hover .konkan-context-icon {
   transform: scale(1.15) rotate(-5deg);
+}
 
 .konkan-context-card h3 {
   margin: 0 0 0.75rem 0;
   font-size: 1.4rem;
   color: var(--text);
   transition: color 0.3s ease;
+}
 
 .konkan-context-card:hover h3 {
   color: var(--accent);
+}
 
 .konkan-context-underline {
   width: 50px;
@@ -241,9 +281,11 @@
   border-radius: 2px;
   margin-bottom: 1.25rem;
   transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 
 .konkan-context-card:hover .konkan-context-underline {
   width: 70px;
+}
 
 .konkan-context-card p {
   margin: 0;
@@ -252,34 +294,43 @@
   font-size: 0.95rem;
   letter-spacing: 0.01em;
   transition: color 0.3s ease;
+}
 
 .konkan-context-card:hover p {
   color: #4a4540;
+}
 
 .site-context-card {
   border-left: 4px solid rgba(30, 90, 74, 0.2);
+}
 
 .site-context-card:hover {
   border-left-color: var(--accent-alt);
+}
 
 .client-brief-card {
   border-left: 4px solid rgba(196, 127, 78, 0.2);
+}
 
 .client-brief-card:hover {
   border-left-color: var(--accent);
+}
 
 .konkan-progress img {
   max-height: 240px;
+}
 
 .konkan-nav {
   display: flex;
   justify-content: flex-end;
+}
 
 .konkan-nav-actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
 
 .konkan-lightbox {
   position: fixed;
@@ -291,6 +342,7 @@
   justify-content: center;
   padding: 1.5rem;
   z-index: 1000;
+}
 
 .konkan-lightbox-inner {
   position: relative;
@@ -299,6 +351,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
 .konkan-lightbox img {
   max-width: 90vw;
@@ -306,6 +359,7 @@
   object-fit: contain;
   border-radius: 16px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
 
 .konkan-lightbox-close {
   position: absolute;
@@ -319,55 +373,68 @@
   color: white;
   font-size: 2rem;
   cursor: pointer;
+}
 
 .konkan-lightbox-caption {
   margin-top: 0.75rem;
   color: white;
+}
+
+
+
+
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
-
+  }
   to {
     opacity: 1;
     transform: translateY(0);
-
+  }
+}
 
 @keyframes fadeInDown {
   from {
     opacity: 0;
     transform: translateY(-30px);
-
+  }
   to {
     opacity: 1;
     transform: translateY(0);
-
+  }
+}
 
 @keyframes slideInRight {
   from {
     width: 0;
     opacity: 0;
-
+  }
   to {
     width: 100%;
     opacity: 1;
-
+  }
+}
 
   .konkan-hero-overlay {
     padding: 1.5rem;
+  }
 
   .konkan-hero-meta {
     flex-direction: column;
     gap: 0.4rem;
+  }
 
   .konkan-grid.three,
   .konkan-grid.two,
   .konkan-grid.six {
     grid-template-columns: 1fr;
+  }
 
   .konkan-lightbox-close {
     top: 12px;
     right: 12px;
     background: rgba(0, 0, 0, 0.45);
+  }
 
