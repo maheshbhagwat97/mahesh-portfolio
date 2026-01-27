@@ -1,0 +1,847 @@
+/* JAIPUR BEDROOM PROJECT - SAME STYLE AS KONKAN */
+
+.jaipur-page {
+  gap: 2rem;
+}
+
+.jaipur-hero {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, #fdfaf5 0%, rgba(196, 127, 78, 0.06) 100%);
+}
+
+.jaipur-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9);
+}
+
+.jaipur-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 3.25rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.jaipur-hero-content {
+  color: #fffef9;
+  max-width: 820px;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.jaipur-hero-content h1 {
+  color: #fffef9;
+  margin: 0 0 0.6rem 0;
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+}
+
+.jaipur-tagline {
+  margin: 0 0 1.1rem 0;
+  font-size: 1.1rem;
+  color: #f4ede2;
+  max-width: 640px;
+}
+
+.jaipur-hero-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.jaipur-hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #f4ede2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* Overview Section */
+.jaipur-fact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.jaipur-fact-grid div p:first-child {
+  margin-bottom: 0.35rem;
+}
+
+.jaipur-fact-grid div p:last-child {
+  margin: 0;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Section Header with Icon */
+.jaipur-section-header {
+  margin-bottom: 2.35rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.jaipur-section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.jaipur-section-icon {
+  font-size: 2.5rem;
+  display: inline-block;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.jaipur-section-header h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.jaipur-section-header::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(196, 127, 78, 0.2), transparent);
+  border-radius: 2px;
+  align-self: center;
+}
+
+/* Context Cards - Client & Concept */
+.jaipur-context-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.jaipur-context-card {
+  padding: 2.5rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fffdf9 0%, #faf8f3 100%);
+  border: 1px solid rgba(196, 127, 78, 0.15);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.client-card { animation-delay: 0s; }
+.concept-card { animation-delay: 0.15s; }
+
+.jaipur-context-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.jaipur-context-card:hover::before {
+  opacity: 1;
+}
+
+.jaipur-context-card:hover {
+  border-color: rgba(196, 127, 78, 0.3);
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 24px 56px rgba(196, 127, 78, 0.16);
+  background: linear-gradient(135deg, rgba(255, 253, 249, 0.98) 0%, rgba(250, 248, 243, 0.98) 100%);
+}
+
+.jaipur-context-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jaipur-context-card:hover .jaipur-context-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.jaipur-context-card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.4rem;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.jaipur-context-card:hover h3 {
+  color: var(--accent);
+}
+
+.jaipur-context-underline {
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jaipur-context-card:hover .jaipur-context-underline {
+  width: 70px;
+}
+
+.jaipur-context-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+/* Plan Cards */
+.jaipur-plan-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 2px solid rgba(196, 127, 78, 0.15);
+  background: linear-gradient(135deg, #fffdf9 0%, #faf8f3 100%);
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  display: flex;
+  flex-direction: column;
+}
+
+.jaipur-plan-card:nth-child(1) { animation-delay: 0.1s; }
+.jaipur-plan-card:nth-child(2) { animation-delay: 0.2s; }
+.jaipur-plan-card:nth-child(3) { animation-delay: 0.3s; }
+.jaipur-plan-card:nth-child(4) { animation-delay: 0.4s; }
+
+.jaipur-plan-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(196, 127, 78, 0.2);
+  border-color: var(--accent);
+}
+
+.plan-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.plan-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jaipur-plan-card:hover .plan-image-wrap img {
+  transform: scale(1.08);
+}
+
+.plan-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(47, 43, 40, 0.2) 0%, rgba(47, 43, 40, 0.4) 100%);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(4px);
+}
+
+.jaipur-plan-card:hover .plan-overlay {
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(47, 43, 40, 0.4) 0%, rgba(47, 43, 40, 0.6) 100%);
+}
+
+.plan-zoom {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(0.6);
+  opacity: 0;
+}
+
+.jaipur-plan-card:hover .plan-zoom {
+  transform: scale(1);
+  opacity: 1;
+  background: rgba(196, 127, 78, 0.8);
+}
+
+.jaipur-plan-card h4 {
+  margin: 1.5rem;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+/* Creative Cards - Process & Outcome */
+.jaipur-creative-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.jaipur-creative-card {
+  padding: 2.5rem;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #fffdf9 0%, #faf8f3 100%);
+  position: relative;
+  padding-top: 3.5rem;
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  overflow: hidden;
+}
+
+.process-card { animation-delay: 0.1s; }
+.outcome-card { animation-delay: 0.2s; }
+
+.jaipur-creative-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  opacity: 0;
+  animation: slideInRight 0.8s ease 0.3s forwards;
+}
+
+.jaipur-creative-card:hover {
+  border-color: rgba(196, 127, 78, 0.3);
+  box-shadow: 0 20px 48px rgba(196, 127, 78, 0.15);
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, rgba(255, 253, 249, 0.98) 0%, rgba(250, 248, 243, 0.98) 100%);
+}
+
+.jaipur-creative-card:hover::before {
+  opacity: 1;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jaipur-creative-card:hover .card-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.jaipur-creative-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  color: var(--text);
+  font-weight: 700;
+  transition: color 300ms ease;
+  letter-spacing: -0.01em;
+}
+
+.jaipur-creative-card:hover h3 {
+  color: var(--accent);
+}
+
+.underline {
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jaipur-creative-card:hover .underline {
+  width: 70px;
+  box-shadow: 0 4px 12px rgba(196, 127, 78, 0.3);
+}
+
+.jaipur-creative-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition: color 300ms ease;
+}
+
+.jaipur-creative-card:hover p {
+  color: #4a4540;
+}
+
+/* Subsection Headers */
+.jaipur-subsection-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(196, 127, 78, 0.15);
+}
+
+.subsection-icon {
+  font-size: 2rem;
+  display: inline-block;
+}
+
+.jaipur-subsection-header h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.35rem;
+}
+
+.jaipur-subsection-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Render Cards */
+.jaipur-render-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 2px solid rgba(196, 127, 78, 0.15);
+  background: white;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  animation: scaleIn 0.6s ease forwards;
+  display: flex;
+  flex-direction: column;
+}
+
+.jaipur-render-card:nth-child(1) { animation-delay: 0s; }
+.jaipur-render-card:nth-child(2) { animation-delay: 0.1s; }
+.jaipur-render-card:nth-child(3) { animation-delay: 0.2s; }
+.jaipur-render-card:nth-child(4) { animation-delay: 0.3s; }
+
+.jaipur-render-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(196, 127, 78, 0.2);
+  border-color: var(--accent);
+}
+
+.render-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.render-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jaipur-render-card:hover .render-image-wrap img {
+  transform: scale(1.1);
+}
+
+.render-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(47, 43, 40, 0.2) 0%, rgba(47, 43, 40, 0.4) 100%);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(4px);
+}
+
+.jaipur-render-card:hover .render-overlay {
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(47, 43, 40, 0.4) 0%, rgba(47, 43, 40, 0.6) 100%);
+}
+
+.render-zoom {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(0.6);
+  opacity: 0;
+}
+
+.jaipur-render-card:hover .render-zoom {
+  transform: scale(1);
+  opacity: 1;
+  background: rgba(196, 127, 78, 0.8);
+}
+
+.render-title {
+  margin: 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Status Card */
+.jaipur-status-card {
+  padding: 2.5rem;
+  border-radius: 16px;
+  border-left: 4px solid var(--accent-alt);
+  background: linear-gradient(135deg, rgba(30, 90, 74, 0.05) 0%, rgba(196, 127, 78, 0.03) 100%);
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.jaipur-status-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-alt), var(--accent), transparent);
+  opacity: 0;
+  animation: slideInRight 0.8s ease 0.3s forwards;
+}
+
+.jaipur-status-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(196, 127, 78, 0.12);
+  border-left-color: var(--accent);
+}
+
+.status-icon {
+  font-size: 2.8rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jaipur-status-card:hover .status-icon {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.jaipur-status-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.jaipur-status-card:hover h3 {
+  color: var(--accent-alt);
+}
+
+.status-underline {
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-alt), var(--accent));
+  border-radius: 2px;
+  margin: 0.75rem 0 1.25rem 0;
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jaipur-status-card:hover .status-underline {
+  width: 80px;
+  box-shadow: 0 4px 12px rgba(196, 127, 78, 0.25);
+}
+
+.jaipur-status-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+/* Navigation Buttons */
+.jaipur-nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.jaipur-nav-button.back { animation-delay: 0s; }
+.jaipur-nav-button.next { animation-delay: 0.1s; }
+
+.jaipur-nav-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+  opacity: 0;
+  transition: opacity 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: -1;
+}
+
+.jaipur-nav-button:hover::before {
+  opacity: 1;
+}
+
+.jaipur-nav-button:hover {
+  color: white;
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(196, 127, 78, 0.3);
+}
+
+.jaipur-nav-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(196, 127, 78, 0.2);
+}
+
+/* Grid Layouts */
+.jaipur-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.jaipur-grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Lightbox */
+.jaipur-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  padding: 1rem;
+}
+
+.jaipur-lightbox-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: zoomIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jaipur-lightbox-inner img {
+  width: 100%;
+  height: 100%;
+  max-width: 80vw;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 32px 96px rgba(0, 0, 0, 0.5);
+}
+
+.jaipur-lightbox-caption {
+  color: white;
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  animation: fadeInUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards;
+  opacity: 0;
+  letter-spacing: 0.01em;
+}
+
+.jaipur-lightbox-caption p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+.jaipur-lightbox-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  line-height: 1;
+  padding: 0;
+  font-weight: 300;
+  backdrop-filter: blur(8px);
+}
+
+.jaipur-lightbox-close:hover {
+  background: rgba(196, 127, 78, 0.8);
+  transform: scale(1.15) rotate(90deg);
+}
+
+/* Animations */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jaipur-hero {
+    height: 400px;
+  }
+
+  .jaipur-hero-overlay {
+    padding: 2rem 1.5rem;
+  }
+
+  .jaipur-hero-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .jaipur-hero-meta {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .jaipur-context-grid,
+  .jaipur-creative-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .jaipur-grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .jaipur-fact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .jaipur-lightbox-close {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+  }
+
+  .jaipur-lightbox-inner img {
+    max-width: 95vw;
+    max-height: 65vh;
+  }
+
+  .jaipur-lightbox-caption {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
