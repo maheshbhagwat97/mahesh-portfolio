@@ -252,25 +252,103 @@
 }
 
 .hero-badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0;
   width: fit-content;
-  padding: 0.6rem 1.1rem;
-  border-radius: 999px;
-  background: rgba(196, 127, 78, 0.1);
-  border: 1px solid rgba(196, 127, 78, 0.2);
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  border: none;
+  position: relative;
+  margin-bottom: 1.5rem;
 }
 
-.badge-dot {
+.badge-accent-line {
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  position: absolute;
+  left: -32px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: slideInLeft 0.8s ease 0.2s both;
+}
+
+.badge-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, rgba(196, 127, 78, 0.12) 0%, rgba(196, 127, 78, 0.08) 100%);
+  border: 1px solid rgba(196, 127, 78, 0.2);
+  border-radius: 999px;
+  animation: slideInUp 0.7s ease 0.1s both;
+  position: relative;
+  z-index: 2;
+}
+
+.badge-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(196, 127, 78, 0.3);
+  display: inline-block;
+}
+
+.badge-subtitle {
+  font-size: 0.75rem;
+  font-weight: 600;
   color: var(--accent);
-  font-size: 0.8rem;
-  animation: pulse 2s ease-in-out infinite;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badge-accent-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: pulse 2.5s ease-in-out infinite;
+  box-shadow: 0 0 12px rgba(196, 127, 78, 0.4);
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+  50% { opacity: 0.6; transform: translateY(-50%) scale(1.3); }
+}
+
+@keyframes slideInLeft {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 24px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-badge .eyebrow {

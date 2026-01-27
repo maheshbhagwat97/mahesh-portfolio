@@ -32,8 +32,13 @@ function Home() {
       <section className="hero">
         <div className="hero-content">
           <div className="hero-badge">
-            <span className="badge-dot">●</span>
-            <p className="eyebrow">Mahesh Bhagwat · Senior Interior Designer</p>
+            <div className="badge-accent-line"></div>
+            <div className="badge-inner">
+              <span className="badge-title">Mahesh Bhagwat</span>
+              <span className="badge-divider"></span>
+              <span className="badge-subtitle">Senior Interior Designer</span>
+            </div>
+            <div className="badge-accent-dot"></div>
           </div>
           <h1 className="hero-title">I design interiors that feel <span className="highlight">calm, warm,</span> and quietly confident.</h1>
           <p className="lede">
@@ -64,6 +69,28 @@ function Home() {
           </div>
         </div>
         <div className="hero-accent"></div>
+      </section>
+
+      <section className="intro-statement panel">
+        <div className="intro-content">
+          <p className="intro-subtitle">A quiet conversation between</p>
+          <h2 className="intro-main">Function and Feeling</h2>
+          <div className="intro-statements">
+            <div className="intro-statement-item">
+              <p>I'm <span className="highlight-bold">Mahesh Bhagwat</span>.</p>
+              <p>I design spaces that <span className="highlight-accent">breathe with the people</span> who live in them.</p>
+            </div>
+            <div className="intro-statement-item">
+              <p>My work is rooted in <span className="highlight-accent">simplicity, natural flow,</span> and a deep respect for how light, materials, and emotions shape everyday life.</p>
+            </div>
+            <div className="intro-statement-item">
+              <p>Each project is a quiet conversation between <span className="highlight-accent">function and feeling</span> — crafted thoughtfully, and built with purpose.</p>
+            </div>
+            <div className="intro-statement-item">
+              <p>My work is about creating <span className="highlight-accent">harmony between structure and softness</span> — where architecture meets emotion, and design becomes a way of living.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="panel">
