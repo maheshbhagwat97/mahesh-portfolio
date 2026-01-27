@@ -97,6 +97,7 @@
   font-weight: 700;
   color: var(--text);
   letter-spacing: 0.03em;
+  text-align: center;
 }
 
 .brand-accent {
