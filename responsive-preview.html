@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Preview - Mobile & Desktop</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .header p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .preview-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .preview-section {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .preview-label {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 12px 15px;
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .preview-label.mobile {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .preview-label.desktop {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .viewport-info {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .iframe-wrapper {
+      flex: 1;
+      overflow: auto;
+      position: relative;
+    }
+
+    .mobile-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px 10px;
+      overflow-y: auto;
+      background: #f9f9f9;
+    }
+
+    .mobile-frame {
+      width: 375px;
+      height: 812px;
+      border: 12px solid #333;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      background: white;
+      position: relative;
+    }
+
+    .mobile-frame::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 25px;
+      background: #333;
+      border-radius: 0 0 20px 20px;
+      z-index: 10;
+    }
+
+    .mobile-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .desktop-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .controls {
+      background: white;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .controls button {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+
+    .controls button:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 1400px) {
+      .preview-container {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-wrapper {
+        justify-content: center;
+        min-height: 100%;
+      }
+
+      .mobile-frame {
+        margin: 20px 0;
+      }
+    }
+
+    .sync-info {
+      font-size: 12px;
+      color: #999;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🎨 Responsive Design Preview</h1>
+    <p>View your portfolio on mobile and desktop simultaneously</p>
+  </div>
+
+  <div class="preview-container">
+    <!-- Mobile View -->
+    <div class="preview-section">
+      <div class="preview-label mobile">
+        📱 Mobile View
+        <span class="viewport-info">375 × 812px (iPhone)</span>
+      </div>
+      <div class="mobile-wrapper">
+        <div class="mobile-frame">
+          <iframe id="mobileFrame" src="http://localhost:5173/" title="Mobile Preview"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop View -->
+    <div class="preview-section">
+      <div class="preview-label desktop">
+        💻 Desktop View
+        <span class="viewport-info">1440 × 900px</span>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe id="desktopFrame" class="desktop-iframe" src="http://localhost:5173/" title="Desktop Preview"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="reloadBoth()">🔄 Reload Both</button>
+    <button onclick="openExternal()">🔗 Open in New Tab</button>
+    <p class="sync-info">Both views update automatically as you make changes</p>
+  </div>
+
+  <script>
+    function reloadBoth() {
+      document.getElementById('mobileFrame').src = 'http://localhost:5173/';
+      document.getElementById('desktopFrame').src = 'http://localhost:5173/';
+    }
+
+    function openExternal() {
+      window.open('http://localhost:5173/', '_blank');
+    }
+
+    // Auto-reload iframes every 5 seconds to pick up changes
+    // Comment this out if you prefer manual reload
+    // setInterval(reloadBoth, 5000);
+  </script>
+</body>
+</html>
