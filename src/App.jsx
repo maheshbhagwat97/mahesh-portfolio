@@ -9,6 +9,7 @@ import ProjectDetail from './pages/ProjectDetail'
 import Services from './pages/Services'
 import Work from './pages/Work'
 import './App.css'
+import './styles/FluidResponsive.css'
 
 const router = createBrowserRouter([
   {

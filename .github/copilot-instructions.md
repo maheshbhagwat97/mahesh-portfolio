@@ -22,18 +22,19 @@
 - Functional components + hooks; keep `useEffect` for side effects (scroll, observers, DOM setup). Prefer state-driven UI, not direct DOM updates.
 - Link navigation via `<Link>` and `<NavLink>` from router; use `useParams()` for route params, `useLocation()` for active route.
 - No global state management; data flows from siteContent.js → pages → child components. Props drilling is acceptable for this scope.
+- **Error boundaries & not-found UI**: Always check if data exists before rendering (e.g., `if (!project) return <div>Project not found</div>`). Pages that fetch by slug should guard against missing data and provide a back link to `/work`.
 - ESLint compliance: prefix unused vars with `_` or uppercase (e.g., `_unused`, `CONST_NOT_USED`).
 
 ## Project Detail Pages
 - **Generic vs. Specialized**: `src/pages/ProjectDetail.jsx` is the catch-all for projects with `images` data structure (plans + renders). Specialized single-project pages like `src/pages/KonkanHouseProject.jsx` and `src/pages/JaipurBedroomProject.jsx` have custom layouts for unique needs (e.g., `konkanMedia` with site gallery, zoning, technical drawings, progress photos).
-- **Data structures**: Projects in `src/data/siteContent.js` can have either `images` (hero, plans array, renders object with `masterBedroom`/`guestBedroom`/`kidsBedroom`) OR project-specific data (e.g., `konkanMedia` with `siteGallery`, `zoning`, `technical`, `renders`, `siteProgress`). Always check `project.images` or `project.konkanMedia` before rendering.
-- **Lightbox modal**: Uses `useState({ isOpen, src, title })` with click-to-open images and backdrop-close. Pattern: `onClick={() => openLightbox(imgSrc, imgTitle)}`.
-- **Responsive gallery grid**: 3-4 columns desktop → 1 column mobile; `.gallery-grid` in CSS handles auto-fit.
+- **Data structures**: Projects in `src/data/siteContent.js` can have either `images` (hero, plans array, renders object with `masterBedroom`/`guestBedroom`/`kidsBedroom`) OR project-specific data (e.g., `konkanMedia` with `siteGallery`, `zoning`, `technical`, `renders`, `siteProgress`). Always use `useMemo(() => projects.find((item) => item.slug === slug), [])` to fetch, and guard: `if (!project || !project.konkanMedia) return <NotFound />`.
+- **Lightbox modal**: Uses `useState({ isOpen, src, title })` or `{ open, src, title }` with click-to-open images and backdrop-close. Pattern: `onClick={() => openLightbox(imgSrc, imgTitle)}`. Ensure backdrop click runs `closeLightbox()`.
+- **Responsive gallery grid**: 3-4 columns desktop → 1 column mobile; `.gallery-grid` in CSS handles auto-fit via `grid-auto-fit`.
 
 ## Scroll Animations & IntersectionObserver
-- **Pattern**: `src/pages/Home.jsx` and `src/pages/About.jsx` use `IntersectionObserver` to trigger `.fadeInUp` animations on `.panel`, `.card`, `.philosophy-card` etc. as they enter viewport. Setup in `useEffect`, clean up with `observer.disconnect()`.
-- **CSS animations**: `@keyframes fadeInUp`, `fadeInDown`, `fadeInLeft`, `scaleIn` defined in `src/index.css` and component styles; cards have `opacity: 0; animation: scaleIn 0.6s ease forwards` with staggered `animation-delay` (0s, 0.1s, 0.2s, etc.).
-- **Avoid React refs**: Prefer vanilla `document.querySelectorAll()` → `observer.observe()` pattern; it's simpler for this use case.
+- **Pattern**: `src/pages/Home.jsx` and `src/pages/About.jsx` use `IntersectionObserver` to trigger `.fadeInUp` animations on `.panel`, `.card`, `.philosophy-card` etc. as they enter viewport. Setup in `useEffect`, clean up with `observer.disconnect()`. Use `threshold: 0.1` and `rootMargin: '0px 0px -50px 0px'` for staggered effect.
+- **CSS animations**: `@keyframes fadeInUp`, `fadeInDown`, `fadeInLeft`, `scaleIn` defined in `src/index.css` and component styles; apply `opacity: 0; animation: fadeInUp 0.8s ease forwards` and stagger with `animation-delay` (0s, 0.1s, 0.2s, etc.). Unobserve after triggering to prevent re-animation.
+- **Avoid React refs**: Prefer vanilla `document.querySelectorAll()` → `observer.observe()` pattern; it's simpler for this use case. No need for `useRef()` here.
 
 ## Naming & Project Routing Gotchas
 - **Project slugs** in `src/data/siteContent.js` must match routes in `src/App.jsx`. Hardcoded routes like `work/konkan-house` and `work/residential-bedroom-design` take priority over the catch-all `work/:slug`.

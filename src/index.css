@@ -2,6 +2,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Fluid base sizing for consistent scaling */
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 :root {
